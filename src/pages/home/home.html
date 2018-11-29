@@ -1,18 +1,114 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-header no-border>
+    <ion-navbar>
+  
+            
+          <ion-buttons left>
+  
+            <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+  
+          </ion-buttons>
+  
+  
+  
+            <ion-buttons center>
+  
+  
+                    <ion-title>Home</ion-title>
+  
+  
+            </ion-buttons>
+  
+  
+  
+            <ion-buttons right>
+  
+                <button ion-button >
+  
+                    <ion-icon name="options" class="font14" ></ion-icon>
+  
+                </button>
+  
+            </ion-buttons>
+  
+  
+  
+    </ion-navbar>
+  </ion-header>
+  
+  
+  
+  <ion-content>
+   
+      <!-- Segment in content -->
+      <ion-segment no-border class="scrollable-segments" color="primary" >
+  
+            <ion-segment-button *ngFor="let category of categories | async" value="{{category.name}}">
+              {{category?.name}}
+            </ion-segment-button>
+  
+       </ion-segment>
+  
+  
+  
+  
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+        <!-- top header big hero  -->
+        <ion-card   class="headerContainer" no-border *ngFor="let post of posts | async | slice:0:1; let i = index; let first = first;"  >
+   
+            <div class="innerGradient" >
+  
+  
+                <img [src]="post.media_url | async" />
+                <div class="card-title"> {{ post?.title }} </div>
+                <div class="card-subtitle">
+                  
+                  <button  ion-button  class="readMoreHeader" color="primary" (click)="openPost(post)" tappable > Read more </button>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+                </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-</ion-content>
+            </div>
+       
+        </ion-card>
+  
+  
+  
+        <!-- all posts big hero  -->
+          <ion-card class="noBorders" no-shadow *ngFor="let post of posts | async | slice:1;" (click)="openPost(post)" tappable >
+  
+              <ion-item no-border text-wrap class="noBorders" >
+    
+                <ion-avatar class="avatar" item-start>
+                  <img [src]="post.media_url | async" >
+                </ion-avatar>
+    
+    
+                    <h3>   {{ post.title }}     </h3>
+                    <p>   <ion-icon name="time" color="primary"></ion-icon> {{ post.date  }}  </p>             
+    
+                    
+    
+              </ion-item>
+            </ion-card>
+ 
+  
+          <!-- <ion-card class="noBorders" no-shadow *ngFor="let post of posts | async" (click)="openPost(post)" tappable>
+              <img [src]="post.media_url | async">
+              <ion-item>
+                ion-avatar item-left>
+                  <img [src]="getUserImage(post.authorId)">
+                </ion-avatar><
+                <h2>{{ getUserName(post.authorId) }}</h2>
+              </ion-item>
+              <ion-card-content>
+                <ion-card-title>
+                  {{ post.title }}
+                </ion-card-title>
+                <div [innerHTML]="post.excerpt"></div>
+              </ion-card-content>
+            </ion-card> -->
+
+  
+  </ion-content>
+  

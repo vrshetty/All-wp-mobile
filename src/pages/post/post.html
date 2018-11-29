@@ -1,0 +1,43 @@
+<ion-fab top left color="primary">
+
+    <ion-buttons left>
+        <button  ion-fab ion-mini navPop icon-only>
+         <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+       </button>
+    </ion-buttons>
+      
+</ion-fab>
+
+
+  <ion-content>
+
+
+        <img class="innerImage" [src]="post?.media_url | async">
+
+        <div class="innerTitle"  padding>
+          <h2 [innerHTML]="post?.title"> </h2>
+        </div>
+
+        
+        <div class="innerContent" [innerHTML]="post?.content" padding>
+            <h2></h2>
+        </div>
+     
+       <!-- Real floating action button, fixed. It will not scroll with the content -->
+     <ion-fab bottom right color="primary">
+
+      <button ion-fab><ion-icon name="share"></ion-icon></button>
+      <ion-fab-list side="top">
+        <button ion-fab color="primary"><ion-icon name="share"></ion-icon></button>
+        <button ion-fab color="deepPrimary"><ion-icon name="logo-facebook"></ion-icon></button>
+        <button ion-fab color="lightPrimary"><ion-icon name="logo-twitter"></ion-icon></button>
+        <button ion-fab color="pink"><ion-icon name="logo-instagram"></ion-icon></button>
+        <button ion-fab color="secondary" (click)="shareViaWhatsapp( post?.excerpt, post?.media_url, post?.link)"><ion-icon name="logo-whatsapp"></ion-icon></button>
+      </ion-fab-list>
+
+    </ion-fab>
+
+     
+  </ion-content>
+
+      

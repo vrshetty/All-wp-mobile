@@ -1,5 +1,7 @@
 {
   "name": "ionicWpApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
