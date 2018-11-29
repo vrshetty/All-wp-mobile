@@ -65,5 +65,3 @@ import { AboutUsPageModule } from '../pages/about-us/about-us.module';
   ]
 })
 export class AppModule {}
-
-
