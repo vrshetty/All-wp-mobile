@@ -1,14 +1,11 @@
 # Ionic-Wordpress-App
 ionic 3 app utilising wordpress json api
 
-![image]()
-![image]()
-![image]()
 
 <p float="left">
-  <img src="https://github.com/Henry-Asante/Ionic-Wordpress-App/blob/master/Screenshot_20181201-162000.png" width="100" />
-  <img src="https://github.com/Henry-Asante/Ionic-Wordpress-App/blob/master/Screenshot_20181128-202030.png" width="100" /> 
-  <img src="https://github.com/Henry-Asante/Ionic-Wordpress-App/blob/master/Screenshot_20181129-120402.png" width="100" />
+  <img src="https://github.com/Henry-Asante/Ionic-Wordpress-App/blob/master/Screenshot_20181201-162000.png" width="32%" />
+  <img src="https://github.com/Henry-Asante/Ionic-Wordpress-App/blob/master/Screenshot_20181128-202030.png" width="32%" /> 
+  <img src="https://github.com/Henry-Asante/Ionic-Wordpress-App/blob/master/Screenshot_20181129-120402.png" width="32%" />
 </p>
 
 
