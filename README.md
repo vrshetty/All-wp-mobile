@@ -1,7 +1,9 @@
 # Ionic-Wordpress-App
 ionic 3 app utilising wordpress json api
 
-
+![image](https://github.com/Henry-Asante/Ionic-Wordpress-App/blob/master/Screenshot_20181201-162000.png)
+![image](https://github.com/Henry-Asante/Ionic-Wordpress-App/blob/master/Screenshot_20181128-202030.png)
+![image](https://github.com/Henry-Asante/Ionic-Wordpress-App/blob/master/Screenshot_20181129-120402.png)
 
 # Features 
 
