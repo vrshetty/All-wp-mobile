@@ -1,5 +1,5 @@
 # Ionic-Wordpress-App
-ionic 3 app utilising wordpress json api
+Ionic 3 app utilising wordpress json api
 
 
 <p float="left">
