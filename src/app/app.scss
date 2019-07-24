@@ -1,18 +1,23 @@
-
-.menuItem button{
-    border: none !important;
+.userProfile{
+    width: 100%;
+    background: url('../assets/imgs/phones.png');
+    border: none;
+    padding: 0;
 }
 
-.userProfile{
-    height: 200px;
-    background: rgba(0, 0, 0, 0.781);
-    margin: 0;
+.userProfile .item-note{
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 86, 163, 0.767);
+    padding: 30px;
 }
 
 .userProfile img{
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #eee;
     background-size: cover;
 }
 
@@ -25,5 +30,7 @@
     color: white;
 }
 
-// .mainMenu{
-// }
+
+
+
+  

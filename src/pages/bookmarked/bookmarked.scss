@@ -1,0 +1,49 @@
+page-bookmarked {
+    .ios, .md {
+ 
+        page-home {
+     
+            ion-header {
+                backdrop-filter: blur(8px);
+            }
+     
+            ion-navbar {
+                opacity: 0.4;
+                box-shadow: 0px 1px 13px 1px rgba(0,0,0,0.77);
+            }
+     
+        }
+     
+    }
+
+
+    .noBorders{
+        box-shadow: 0 0 10px rgba(204, 204, 204, 0.5) !important;
+        border-radius: 10px;
+        font-size: 12px;
+        background: #fff;
+        height: 100px;
+        
+    }
+
+
+    .noBorders .textContent{
+        font-size: 10px; 
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        overflow: scroll !important;
+    }
+
+
+
+    .noBorders .avatar img{
+        height: 70px;
+        width: 70px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    
+}

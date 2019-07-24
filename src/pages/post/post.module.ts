@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { PostPage } from './post';
 import { SocialSharing } from '@ionic-native/social-sharing';
-import { WpProvider, Post } from '../../providers/wp-provider';
+import { WpProvider } from '../../providers/wp-provider';
+import { UtilsProvider } from '../../providers/utils/utils';
+
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -10,13 +13,15 @@ import { WpProvider, Post } from '../../providers/wp-provider';
   ],
   imports: [
     IonicPageModule.forChild(PostPage),
+    PipesModule,
   ],
   exports: [
     PostPage
   ],
   providers: [
     SocialSharing,
-    WpProvider
+    WpProvider,
+    UtilsProvider
   ]
 })
 export class PostPageModule {}

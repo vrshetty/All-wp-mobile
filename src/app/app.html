@@ -1,34 +1,41 @@
 <ion-menu [content]="content">
 
-
-  <!-- <ion-header  no-border>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
-
-  
-
-  <ion-content class="mainMenu">
+  <ion-content>
 
 
-      <div class="userProfile">
+    <!------------------------------------------------>
 
-          <img src="../assets/imgs/phones.png">
 
-      </div>
+    <div class="userProfile"  no-border >
 
-      <div ion-item menuClose no-border class="bluerow">
+        <div class="item-note" > 
 
-              <p class="item-note" item-start> 
+          
+          <ion-avatar item-start>
+              <img src="../assets/imgs/user_profile.jpg">
+          </ion-avatar>
+         
+
+        </div>  
+
+    </div>
+
+
+    <!------------------------------------------------>
+
+      <div ion-item menuClose no-border style="border: none; text-align: center" no-lines class="bluerow">
+        
+              <p class="item-note text-center" item-start text-center> 
                   <ion-icon name="person" item-start></ion-icon>
 
-                 Welcome Guest  
+                   Welcome Guest  
 
                 </p>     
       </div>
 
 
+
+     <!------------------------------------------------>
 
 
       <ion-list no-lines style="border: none;" class="menuItem">
@@ -39,9 +46,9 @@
 
             <ion-icon name="{{p.icon}}" item-start color="primary"></ion-icon>
 
-           <div class="item-note" item-start>
+           <p class="item-note" item-start>
               {{p.title}}
-            </div>
+           </p>
 
             <!-- <ion-icon name="arrow-dropright" item-end></ion-icon> -->
 
@@ -62,7 +69,7 @@
       <button menuClose no-border ion-item>
           
          <ion-icon name="options" item-start color="secondary"></ion-icon>
-         <div class="item-note" item-start (click)="openFooterPage()" >  Settings  </div>
+         <p class="item-note" item-start (click)="openFooterPage()" >  Settings  </p>
 
       </button>
 
@@ -72,4 +79,4 @@
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false" [class]="utilsProvider.activeTheme"></ion-nav>

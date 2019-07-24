@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController, Loading } from 'ionic-angular';
 import { WpProvider, Post } from '../../providers/wp-provider';
 import { Observable } from 'rxjs/Observable';
- 
+import { SettingsPage } from '../settings/settings';
+// import { Storage } from '@ionic/storage';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -13,30 +15,53 @@ export class HomePage {
   posts: Observable<Post[]>;
   categories: Observable<any[]>;
 
+  chosenCategory: string = 'Home';
  
-  constructor(public navCtrl: NavController, public wpProvider: WpProvider, public loadingCtrl: LoadingController) {
-  
-    };
+  constructor(
+    public navCtrl: NavController, 
+    public wpProvider: WpProvider, 
+    public loadingCtrl: LoadingController
+  ){};
 
     ionViewDidLoad(){
         
-        // this.presentLoading();
+        this.presentLoading();
 
-        // this.categories = this.wpProvider.getCategoryList();
-        // this.categories.subscribe( data => console.log(data) );
+        this.categories = this.wpProvider.getCategoryList();
 
-        //     this.posts = this.wpProvider.getPosts();
-        //     this.posts.subscribe( (data) => {
-        //       console.log(data);
-        //       this.loader.dismiss();
-        //     });
+        this.posts = this.wpProvider.getPosts();
+        this.posts.subscribe( (data) => {
+              this.loader.dismiss();
+        });
 
     }
-    // so we first pass user id, then we call the image
-    // after we pass that subscribed data to the social plugin
 
-  doLastOperations(){
-    
+
+  getPostsCollection(){
+
+        this.chosenCategory = 'Home';
+
+        this.presentLoading();
+
+        this.posts = this.wpProvider.getPosts();
+
+        this.posts.subscribe( (data) => {
+              this.loader.dismiss();
+        });
+
+    }
+
+  getCategoryPosts(category){
+
+    this.chosenCategory = category.name;
+
+    this.presentLoading();
+
+    this.posts = this.wpProvider.getPostsByCategories(category);
+    this.posts.subscribe( (data) => {
+          this.loader.dismiss();
+        });
+
   }
 
   getUserImage(id: number) {
@@ -58,5 +83,9 @@ export class HomePage {
     this.loader.present();
   }
 
+
+  goToSettings(){
+      this.navCtrl.push(SettingsPage);
+  }
 
 }

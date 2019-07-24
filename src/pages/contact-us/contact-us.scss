@@ -1,3 +1,54 @@
 page-contact-us {
+    .welcomeMessage, .loginInputs, .bottomInfo{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .contentBody{
+        width: 100%;
+        padding: 10px;
+        margin: 0 auto;
+        height: 100vh;
+        color: #fff;
+    }
+
+    .welcomeMessage h2{
+        font-weight: bolder;
+    }
+
+
+    .contentBody .contentInner{
+        margin: 10% auto;
+    }
+
+   
+    .loginInputs input, textarea{
+        width: 100%;
+        padding: 15px;
+        border-radius: 30px;
+        margin: 10px auto;
+        border: 2px solid #1bd854;
+        color: rgb(17, 17, 17);
+    }
+
+    .loginInputs p{
+        color: rgb(17, 17, 17);
+        margin-left: 5px;
+    }
+
+    .loginInputs textarea{
+        height: 200px;
+    }
+
+    .loginInputs button{
+        width: 100%;
+        border: none;
+        border-radius: 30px;
+        padding: 15px;
+        margin: 10px auto;
+        color: #fff;
+        background:  #1bd854;
+    }
+
 
 }

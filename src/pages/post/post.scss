@@ -12,6 +12,7 @@ page-post {
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
         z-index: 10;
+        filter: brightness(50%);
     }
 
     .innerTitle{
@@ -46,5 +47,26 @@ page-post {
      .innerContent blockquote em{
          font-size: 18px;
      }
+
+
+    .comments ion-item{
+        box-shadow: 0 0 10px rgba(190, 190, 190, 0.733);
+        border-radius: 5px;
+    }
+
+    .comments .singleComment input,textarea{
+        border: 1px solid rgb(209, 209, 209);
+        padding: 10px;
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .comments .singleComment button{
+        // border: 1px solid rgb(138, 138, 138);
+        padding: 20px;
+        width: 100%;
+        margin: 5px auto;
+    }
+
 
 }

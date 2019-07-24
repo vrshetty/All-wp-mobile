@@ -14,15 +14,85 @@
 
         <img class="innerImage" [src]="post?.media_url | async">
 
+
+        <!---------------------------------------------->
+
         <div class="innerTitle"  padding>
+
           <h2 [innerHTML]="post?.title"> </h2>
+        
+          <!-- <img class="innerImage" [src]="post?.author_url | async"> -->
+
+           <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap"> 
+            
+              <div style="margin-top: 5px">
+                <h4> <ion-icon name="time" color="primary"></ion-icon> {{ post?.date | timeAgo}}  </h4>   
+              </div>
+
+              <div>
+                  <ion-icon name="bookmark"  *ngIf="postIsBookmarked"  color="secondary" (click)="bookmarkAndUnbookmark()" ></ion-icon>
+                  <ion-icon name="bookmark"  *ngIf="!postIsBookmarked" color="grey" (click)="bookmarkAndUnbookmark()" ></ion-icon>
+              </div>
+            
+          </div> 
+       
+
         </div>
 
+
         
+        <!---------------------------------------------->
+
         <div class="innerContent" [innerHTML]="post?.content" padding>
-            <h2></h2>
         </div>
      
+
+        <!---------------------------------------------->
+
+        <ion-list class="comments" padding  text-wrap >
+
+            <h4> Comments </h4>
+
+
+            <ion-item class="singleComment" *ngFor="let comment of comments"  text-wrap>
+
+              <ion-thumbnail item-start>
+                <img [src]="comment?.author_avatar_urls['48']" >
+              </ion-thumbnail>
+
+              <p [innerHTML]="comment?.content" ></p>
+                
+              <h6> <ion-icon name="person" color="primary"></ion-icon> {{comment?.author_name}} </h6>  
+
+              <p>   <ion-icon name="time" color="primary"></ion-icon> {{ comment?.date | timeAgo}}  </p>             
+                
+            </ion-item>
+          
+
+
+            
+            <ion-item class="singleComment" >
+
+
+                  <input type="text" placeholder="Email" [(ngModel)]="newComment.author_name" > 
+
+                  <input type="text" placeholder="Name" [(ngModel)]="newComment.author_email" > 
+                
+                  <textarea type="text" placeholder="Comment" [(ngModel)]="newComment.comment" ></textarea>
+
+                  <br>
+
+                  <button ion-button color="primary" (click)="postANewComment()" >Comment</button>
+
+
+            </ion-item>
+
+
+        </ion-list>
+
+
+
+
        <!-- Real floating action button, fixed. It will not scroll with the content -->
      <ion-fab bottom right color="primary">
 

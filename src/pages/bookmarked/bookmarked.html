@@ -1,0 +1,60 @@
+<ion-header no-border>
+  <ion-navbar>
+
+          
+        <ion-buttons left>
+
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+
+        </ion-buttons>
+
+
+
+          <ion-buttons center>
+
+
+                  <ion-title>Bookmarked Posts</ion-title>
+
+
+          </ion-buttons>
+
+
+<!-- 
+          <ion-buttons right>
+
+              <button ion-button >
+
+                  <ion-icon name="options" class="font14" ></ion-icon>
+
+              </button>
+
+          </ion-buttons> -->
+
+
+
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content >
+
+
+    <ion-card class="noBorders" no-shadow *ngFor="let post of allBookmarkedPost;" (click)="openPost(post)" tappable >
+      
+        <ion-item no-border text-wrap class="noBorders" >
+
+              <ion-avatar class="avatar" item-start>
+                <img [src]="post.media_url | async" >
+              </ion-avatar>
+
+              <h3>   {{ post.title }}     </h3>
+              <!-- <p>   <ion-icon name="time" color="primary"></ion-icon> {{ post.date | timeAgo}}  </p>              -->
+
+        </ion-item>
+      </ion-card> 
+
+
+</ion-content>

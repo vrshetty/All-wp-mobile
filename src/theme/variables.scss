@@ -41,7 +41,9 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       rgb(58, 57, 57),
-  pink:       rgb(206, 3, 189)
+  pink:       rgb(206, 3, 189),
+  black: rgb(0, 0, 0),
+  grey: rgb(223, 223, 223),
 );
 
 
@@ -80,7 +82,7 @@ $toolbar-ios-padding: 0px;
 
 
 $toolbar-border-color: transparent;
-$toolbar-background: #4A8BFC !default;
+$toolbar-background: color($colors, primary) !default;
 
 
 
@@ -88,3 +90,7 @@ $toolbar-background: #4A8BFC !default;
 @import "ionic.ionicons";
 @import "roboto";
 @import "noto-sans";
+
+
+@import "darkmode";
+@import "lightmode";

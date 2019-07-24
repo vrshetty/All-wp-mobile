@@ -27,29 +27,41 @@ import { SignupPageModule } from '../pages/signup/signup.module';
 import { LoginPageModule } from '../pages/login/login.module';
 import { ContactUsPageModule } from '../pages/contact-us/contact-us.module';
 import { AboutUsPageModule } from '../pages/about-us/about-us.module';
+import { BookmarkedPageModule } from '../pages/bookmarked/bookmarked.module';
 
+import { PipesModule } from '../pipes/pipes.module';
+
+import { UtilsProvider } from '../providers/utils/utils';
+import { IonicStorageModule } from '@ionic/storage';
+
+import { OneSignal } from '@ionic-native/onesignal';
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage
-  ],
+    ],
   imports: [
     BrowserModule,
     HttpModule,
-        WpApiModule.forRoot({
+    IonicStorageModule.forRoot(),
+    
+     WpApiModule.forRoot({
       provide: WpApiLoader,
       useFactory: (WpApiLoaderFactory),
-      deps: [Http]
+      deps: [Http],
     }),
+
     IonicModule.forRoot(MyApp),
     SettingsPageModule,
     YoutubePageModule,
     LoginPageModule,
     SignupPageModule,
     ContactUsPageModule,
-    AboutUsPageModule
+    AboutUsPageModule,
+    BookmarkedPageModule,
+    PipesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -61,7 +73,9 @@ import { AboutUsPageModule } from '../pages/about-us/about-us.module';
     SplashScreen,
     SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    WpProvider
+    WpProvider,
+    UtilsProvider,
+    OneSignal
   ]
 })
 export class AppModule {}
